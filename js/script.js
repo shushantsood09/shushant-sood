@@ -1,6 +1,6 @@
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
 
 //  Toggle Icon
 
@@ -26,9 +26,7 @@ window.onscroll = () => {
     if (top >= offset && top < offset + height) {
       navlinks.forEach((links) => {
         links.classList.remove("active");
-        document
-          .querySelector("header nav a[href*=" + id + "]")
-          .classList.add("active");
+        document.querySelector('header nav a[href*=' + id + ']').classList.add("active");
       });
     }
   });
@@ -70,3 +68,18 @@ const type = new Typed(".multiple-text", {
   backDelay: 1000,
   loop: true,
 });
+
+//  Function success
+
+function success() {
+  if (
+    document.getElementById("fullName").value === "" &&
+    document.getElementById("email").value === "" &&
+    document.getElementById("subject").value === "" &&
+    document.getElementById("message").value === ""
+  ) {
+    document.getElementById("button").disabled = true;
+  } else {
+    document.getElementById("button").disabled = false;
+  }
+}
